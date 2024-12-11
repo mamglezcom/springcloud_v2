@@ -1,13 +1,14 @@
-package com.mamglez.springcloud.msvc.products.msvc_products;
+package com.mamglez.springcloud.app.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MsvcProductsApplication {
+public class MsvcGatewayServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MsvcProductsApplication.class, args);
+		SpringApplication.run(MsvcGatewayServerApplication.class, args);
 	}
 
 }
+ 

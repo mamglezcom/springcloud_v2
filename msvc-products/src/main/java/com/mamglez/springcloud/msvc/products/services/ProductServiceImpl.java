@@ -8,7 +8,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mamglez.springcloud.msvc.products.entities.Product;
+import com.mamglez.libs.msvc.commons.entities.Product;
 import com.mamglez.springcloud.msvc.products.repositories.ProductRepository;
 
 @Service
@@ -43,6 +43,19 @@ public class ProductServiceImpl implements ProductService{
             product.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
             return product;
        });
+    }
+
+    @Override
+    @Transactional
+    public Product save(Product product) {
+        return this.repository.save(product);
+        
+    }
+
+    @Transactional
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 
 }

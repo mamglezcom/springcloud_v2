@@ -1,5 +1,7 @@
 package com.mamglez.springcloud.msvc.items.models;
 
+import com.mamglez.libs.msvc.commons.entities.Product;
+
 public class Item {
 
     private Product product;

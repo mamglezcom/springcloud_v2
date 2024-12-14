@@ -23,6 +23,12 @@ spring:
   cloud:
     gateway:
       routes:
+      - id: msvc-users
+        uri: lb://msvc-users
+        predicates:
+        -  Path=/api/users/**
+        filters:
+        - StripPrefix=2
       - id: msvc-products
         uri: lb://msvc-products
         predicates:
@@ -33,7 +39,7 @@ spring:
 #        - Cookie=color, azul
 #        - Header=Content-Type, application/json
         filters:
-        - name: circuitbreaker
+        - name: CircuitBreaker
           args:
             name: products
             statusCodes: 500
